@@ -1,3 +1,12 @@
-const h2 = document.createElement("h2");
-h2.textContent = "This content added by JavaScript";
-document.querySelector("body").appendChild(h2);
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (event) => {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  if (!name || !email || !message) {
+    event.preventDefault();
+    alert('Please fill in all fields!');
+  }
+});
